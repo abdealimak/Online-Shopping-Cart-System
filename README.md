@@ -26,10 +26,11 @@ This project models a simplified online store where users can browse a catalog o
 
 ```
 OnlineShoppingCart/
-│
-├── main.cpp          # Complete source code (single-file project)
-├── orders.txt        # Auto-generated file that stores all completed orders
-└── README.md         # Project documentation
+├── 📁 Documentations
+│   └── 📕 AbdealiMakda_OnlineShoppingCartSystem_CaseStudyReport.pdf
+├── ⚙️ .gitignore
+├── 📝 README.md
+└── ⚡ main.cpp
 ```
 
 ### Class Overview
