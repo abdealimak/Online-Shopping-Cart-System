@@ -49,28 +49,28 @@ ShoppingCart     (Manages cart operations and checkout)
 ## 🧠 C++ & OOP Concepts Used
 
 ### 1. 🔷 Classes & Objects
-Every entity — `Product`, `Electronics`, `Accessory`, `CartItem`, and `ShoppingCart` — is modelled as a class with encapsulated data and member functions.
+Every entity — `Product`, `Electronics`, `Accessory`, `CartItem`, and `ShoppingCart` — is modelled as a class with data members and member functions.
 
 ### 2. 🔷 Abstraction
 `Product` is an **abstract base class** with three pure virtual functions:
 ```cpp
-virtual double      getGST()         const = 0;
-virtual const char* getCategory()    const = 0;
-virtual void        displayDetails() const = 0;
+virtual double      getGST()      = 0;
+virtual const char* getCategory() = 0;
+virtual void        display()     = 0;
 ```
 This enforces a contract — every derived class *must* provide its own implementation.
 
 ### 3. 🔷 Inheritance
-`Electronics` and `Accessory` both **inherit** from `Product`, reusing the common attributes (`id`, `name`, `price`) and constructor logic while providing their own category and display behaviour.
+`Electronics` and `Accessory` both **inherit** from `Product`, reusing the common attributes (`id`, `name`, `price`) while providing their own category and display behaviour.
 
 ### 4. 🔷 Polymorphism (Runtime)
-The product catalog is stored as `Product* catalog[N]` — an array of **base class pointers**. When `displayDetails()` or `getGST()` is called, **virtual dispatch** ensures the correct derived class method runs at runtime.
+The product catalog is stored as `Product* catalog[N]` — an array of **base class pointers**. When `display()` or `getGST()` is called, **virtual dispatch** ensures the correct derived class method runs at runtime.
 ```cpp
-catalog[i]->displayDetails();   // Calls Electronics::displayDetails or Accessory::displayDetails
+catalog[i]->display();   // Calls Electronics::display or Accessory::display
 ```
 
 ### 5. 🔷 Encapsulation
-All class data members are `private` or `protected`. External code interacts only through well-defined public getter methods and member functions, keeping internal state safe.
+Data and behaviour are bundled together inside classes. Members like `id`, `name`, `price`, and `qty` are declared `public` — an intentional simplification that removes the need for getter functions while still keeping all logic encapsulated within the class structure.
 
 ### 6. 🔷 Virtual Destructor
 `Product` declares a `virtual ~Product()` to ensure that when a derived object is deleted through a base class pointer, the correct destructor chain is called — preventing memory leaks.
