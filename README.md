@@ -27,7 +27,8 @@ This project models a simplified online store where users can browse a catalog o
 ```
 OnlineShoppingCart/
 ├── 📁 Documentations
-│   └── 📕 AbdealiMakda_OnlineShoppingCartSystem_CaseStudyReport.pdf
+│   ├── 📕 CaseStudyReport.pdf
+│   └── 📕 Presentation.pdf
 ├── ⚙️ .gitignore
 ├── 📝 README.md
 └── ⚡ main.cpp
