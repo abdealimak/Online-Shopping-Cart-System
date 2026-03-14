@@ -60,7 +60,7 @@ public:
     }
 };
 
-// Pairs a product with a quantity, and calculates its subtotal
+// Pairs a product with a quantity, and calculates its subtotal, Each CartItem represents a row in the cart
 class CartItem {
 public:
     Product* product;
