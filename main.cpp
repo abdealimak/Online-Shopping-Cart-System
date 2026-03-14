@@ -124,7 +124,7 @@ public:
 
         if (items[idx].qty == 0) {
             printf("     Removed from cart.\n");
-            for (int i = idx; i < count - 1; i++) items[i] = items[i + 1];
+            for (int i = idx; i < count - 1; i++) items[i] = items[i + 1]; //shifts remaining items
             count--;
         }
     }
